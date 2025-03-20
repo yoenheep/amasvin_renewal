@@ -5,10 +5,63 @@
   font-weight: normal;
   font-style: normal;
 }
-
 * {
   font-family: "GongGothicMedium";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header,
+section,
+footer {
+  border: 1px solid black;
+}
+
+/* header */
+header {
+  width: 100%;
+  height: 60px;
+  padding: 10px 0;
+  position: fixed;
+}
+#logo {
+  width: 110px;
+  position: absolute;
+  float: left;
+  margin-left: 40px;
+}
+#logo img {
+  width: 100%;
+}
+header nav {
+  max-width: 1300px;
+}
+header nav a#toggle {
+  width: 25px;
+  line-height: 50px;
+  display: block;
+  float: right;
+  margin-right: 40px;
+}
+header nav a#toggle img {
+  width: 100%;
+}
+
+header nav ul li {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #576979;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+header nav ul {
+  padding-top: 50px;
+  display: none;
 }
