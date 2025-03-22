@@ -17,51 +17,137 @@ a {
   color: black;
 }
 
-header,
-section,
-footer {
+#contents {
   border: 1px solid black;
 }
 
 /* header */
 header {
   width: 100%;
-  height: 60px;
-  padding: 10px 0;
   position: fixed;
+  padding: 10px 40px;
+  background-color: skyblue;
+}
+
+header nav {
+  max-width: 1200px;
+  height: 60px;
+  margin: 0 auto;
 }
 #logo {
-  width: 110px;
-  position: absolute;
+  height: 100%;
   float: left;
-  margin-left: 40px;
 }
 #logo img {
-  width: 100%;
+  height: 100%;
 }
-header nav {
-  max-width: 1300px;
+header nav .active {
+  background-color: skyblue;
 }
-header nav a#toggle {
-  width: 25px;
-  line-height: 50px;
+header nav #menu a#toggle {
+  width: 45px;
+  height: 60px;
+  line-height: 85px;
   display: block;
   float: right;
-  margin-right: 40px;
 }
-header nav a#toggle img {
+header nav #menu a#toggle img {
   width: 100%;
 }
 
-header nav ul li {
-  padding: 12px;
+header nav #menu ul li {
+  padding: 20px;
   text-align: center;
   border-bottom: 1px solid #576979;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
-header nav ul {
-  padding-top: 50px;
+header nav #menu ul {
   display: none;
+  clear: right;
+  margin: 0 auto;
+}
+
+/*banner*/
+section#banner {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../image/banner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 230px 40px;
+}
+section#banner h2 {
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/*section*/
+section {
+  padding: 120px 40px;
+}
+section article .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 50px;
+  font-size: 1.1em;
+}
+section article .title img {
+  width: 45px;
+}
+
+/*new*/
+section#new article #newContent div {
+  width: 100%;
+  height: 130px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 25%);
+  background-size: cover;
+}
+section#new article #newContent div:first-child {
+  background-image: url(../image/berryNew.jpg);
+  margin-bottom: 40px;
+}
+section#new article #newContent div:nth-child(2) {
+  background-image: url(../image/bubbleNew.png);
+}
+
+/*PC & Mobile*/
+@media screen and (min-width: 864px) {
+  header nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  header nav #menu {
+    width: 550px;
+  }
+  header nav #menu a#toggle {
+    display: none !important;
+  }
+  header nav #menu ul {
+    display: flex;
+    justify-content: space-between;
+    background: none;
+  }
+  header nav #menu ul li {
+    border: none;
+  }
+
+  section#banner h2 {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header nav #menu {
+    width: 750px;
+  }
 }
