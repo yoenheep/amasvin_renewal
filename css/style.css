@@ -26,12 +26,11 @@ header {
   width: 100%;
   position: fixed;
   padding: 10px 40px;
-  background-color: skyblue;
 }
 
 header nav {
   max-width: 1200px;
-  height: 60px;
+  height: 50px;
   margin: 0 auto;
 }
 #logo {
@@ -42,17 +41,18 @@ header nav {
   height: 100%;
 }
 header nav .active {
-  background-color: skyblue;
+  background-color: #a6daf4;
 }
 header nav #menu a#toggle {
-  width: 45px;
-  height: 60px;
-  line-height: 85px;
+  width: 40px;
+  height: 50px;
+  line-height: 50px;
   display: block;
   float: right;
 }
 header nav #menu a#toggle img {
   width: 100%;
+  vertical-align: middle;
 }
 
 header nav #menu ul li {
@@ -69,16 +69,43 @@ header nav #menu ul {
   margin: 0 auto;
 }
 
+/*section*/
+section {
+  height: 100vh;
+  padding: 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section article {
+  width: 100%;
+}
+section article .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 50px;
+  font-size: 1em;
+}
+section article .title img {
+  width: 40px;
+}
+
 /*banner*/
+section#banner {
+  justify-content: flex-start;
+}
 section#banner {
   width: 100%;
   height: 100vh;
   background-image: url(../image/banner.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   text-align: center;
-  padding: 230px 40px;
+  padding: 160px 40px;
 }
 section#banner h2 {
   color: white;
@@ -87,26 +114,10 @@ section#banner h2 {
   margin-bottom: 30px;
 }
 
-/*section*/
-section {
-  padding: 120px 40px;
-}
-section article .title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 50px;
-  font-size: 1.1em;
-}
-section article .title img {
-  width: 45px;
-}
-
 /*new*/
 section#new article #newContent div {
   width: 100%;
-  height: 130px;
+  height: 200px;
   border-radius: 10px;
   box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 25%);
   background-size: cover;
@@ -119,8 +130,113 @@ section#new article #newContent div:nth-child(2) {
   background-image: url(../image/bubbleNew.png);
 }
 
+/*menu*/
+section#ingredient {
+  background-color: #a6daf4;
+}
+
+/*ingredient*/
+section#ingredient {
+  background-color: #fcfcd4;
+}
+section#ingredient article #ingreContent div {
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 25%);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 25px;
+}
+section#ingredient article #ingreContent p {
+  color: white;
+  text-align: center;
+  line-height: 110px;
+  font-size: 0.8em;
+}
+section#ingredient article #ingreContent div:first-child {
+  background-image: url(../image/말차.jpg);
+}
+section#ingredient article #ingreContent div:nth-child(2) {
+  background-image: url(../image/yogurt.jpg);
+}
+section#ingredient article #ingreContent div:nth-child(3) {
+  background-image: url(../image/과일.jpg);
+}
+section#ingredient article #ingreContent div:last-child {
+  background-image: url(../image/원두.jpg);
+  margin-bottom: 0;
+}
+
+/*franchise*/
+section#franchise article #franContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  font-size: 1.5em;
+}
+section#franchise article #franContent .franImg {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+  border-radius: 100%;
+  border: 2px solid #a6daf4;
+  padding: 10px;
+}
+section#franchise article #franContent .franImg Img {
+  height: 100%;
+}
+section#franchise article #franContent > div:last-child .franImg img {
+  width: 100%;
+}
+
+section#franchise article #franText {
+  text-align: center;
+  font-size: 1em;
+  line-height: 25px;
+  margin-bottom: 40px;
+}
+
+section#franchise article #franButton {
+  width: 230px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background-color: #a6daf4;
+  border-radius: 70px;
+  border: 2px solid #00a6fb;
+  margin: 0 auto;
+  font-size: 1.5em;
+}
+
+/*footer*/
+footer {
+  background-color: #313131;
+  color: #bcbcbc;
+  width: 100%;
+  padding: 50px 40px;
+  font-size: 0.5em;
+  text-align: center;
+}
+footer img {
+  width: 100px;
+  opacity: 0.8;
+  padding: 20px 0;
+}
+footer p {
+  padding: 5px 0;
+}
+footer span {
+  width: 100%;
+  display: block;
+}
 /*PC & Mobile*/
-@media screen and (min-width: 864px) {
+@media screen and (min-width: 875px) {
+  /*header*/
   header nav {
     display: flex;
     justify-content: space-evenly;
@@ -141,8 +257,46 @@ section#new article #newContent div:nth-child(2) {
     border: none;
   }
 
+  /*section*/
+  section {
+    padding: 0 120px;
+  }
+  section article .title {
+    gap: 30px;
+    margin-bottom: 70px;
+    font-size: 2em;
+  }
+  section article .title img {
+    width: 70px;
+  }
+
+  /*banner*/
   section#banner h2 {
-    font-size: 2.5em;
+    font-size: 2em;
+  }
+
+  /*new*/
+  section#new article #newContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 90px;
+  }
+  section#new article #newContent div {
+    width: 100%;
+    height: 550px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 25%);
+    background-size: cover;
+  }
+  section#new article #newContent div:first-child {
+    margin-bottom: 0px;
+  }
+
+  /*footer*/
+  footer span {
+    display: inline;
+    padding-left: 25px;
   }
 }
 

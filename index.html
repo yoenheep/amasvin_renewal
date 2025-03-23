@@ -8,6 +8,11 @@
     <title>아마스빈_리뉴얼</title>
     <link rel="stylesheet" href="./css/style.css" />
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <header>
@@ -56,7 +61,16 @@
             <img src="./image/화이트.png" />
             <h2>MENU</h2>
           </aside>
-          <aside id="slide"></aside>
+          <aside class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              ...
+            </div>
+          </aside>
         </article>
       </section>
 
@@ -66,7 +80,12 @@
             <img src="./image/코.png" />
             <h2>GOOD DRINK</h2>
           </aside>
-          <aside id="ingreContent"></aside>
+          <aside id="ingreContent">
+            <div><p>하동잎 100%</p></div>
+            <div><p>목장 생요거트</p></div>
+            <div><p>과일주스 버블티</p></div>
+            <div><p>도시농가코페 로스터리</p></div>
+          </aside>
         </article>
       </section>
 
@@ -77,14 +96,52 @@
             <h2>FRANCHISE</h2>
           </aside>
           <aside id="franContent">
-            <div></div>
-            <div></div>
+            <div>
+              <div class="franImg"><img src="./image/떵구.png" /></div>
+              <p>다양한 메뉴</p>
+            </div>
+            <div>
+              <div class="franImg"><img src="./image/임금.png" /></div>
+              <p>맛있는 음료</p>
+            </div>
+            <div>
+              <div class="franImg"><img src="./image/그레이 백작.png" /></div>
+              <p>저렴한 가격</p>
+            </div>
+            <div>
+              <div class="franImg"><img src="./image/덕배.png" /></div>
+              <p>신선한 재료</p>
+            </div>
           </aside>
-          <aside id="button"></aside>
+          <aside id="franText">
+            <h3>
+              10년을 훌쩍 넘긴 버블티 프랜차이즈<br />오랫동안 사랑받을 수
+              있었던 이유를 만나보세요.
+            </h3>
+          </aside>
+          <aside id="franButton"><p>가맹문의 ></p></aside>
         </article>
       </section>
     </div>
-    <footer>text</footer>
+
+    <footer>
+      <img src="./image/footer_logo.png" />
+      <p>
+        전국 가맹문의:1899-8608
+        <span>서울 & 중부권 지사 대표번호 1899-8603</span>
+        <span>서울 & 중부권 지사 가맹문의 02-866-7043</span>
+      </p>
+      <p>
+        사업자등록번호:605-86-27507
+        <span>(주) 비케이컴퍼니 대표이사 이욱기</span>
+        <span>부산 진구 중앙대로 666번길 17 8층</span>
+      </p>
+      <p>
+        TEL:1899-8608
+        <span>amasvin_sns@naver.com</span>
+      </p>
+      <p>ⓒBKC CO.LTD ALL Rights Reserved</p>
+    </footer>
     <script src="./JS/main.js"></script>
   </body>
 </html>
