@@ -59,7 +59,7 @@ header nav #menu ul li {
   padding: 20px;
   text-align: center;
   border-bottom: 1px solid #576979;
-  font-size: 1.2em;
+  font-size: 2em;
   font-weight: bold;
 }
 
@@ -71,8 +71,7 @@ header nav #menu ul {
 
 /*section*/
 section {
-  height: 100vh;
-  padding: 0 40px;
+  padding: 100px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -234,6 +233,9 @@ footer span {
   width: 100%;
   display: block;
 }
+footer p:last-child {
+  padding-bottom: 20px;
+}
 /*PC & Mobile*/
 @media screen and (min-width: 875px) {
   /*header*/
@@ -252,6 +254,7 @@ footer span {
     display: flex;
     justify-content: space-between;
     background: none;
+    font-size: 0.4em;
   }
   header nav #menu ul li {
     border: none;
@@ -259,20 +262,24 @@ footer span {
 
   /*section*/
   section {
+    height: 100vh;
     padding: 0 120px;
   }
   section article .title {
-    gap: 30px;
-    margin-bottom: 70px;
-    font-size: 2em;
+    gap: 20px;
+    margin-bottom: 40px;
+    font-size: 1.3em;
   }
   section article .title img {
-    width: 70px;
+    width: 50px;
   }
 
   /*banner*/
+  section#banner {
+    padding: 95px 120px;
+  }
   section#banner h2 {
-    font-size: 2em;
+    font-size: 1.3em;
   }
 
   /*new*/
@@ -283,14 +290,33 @@ footer span {
     gap: 90px;
   }
   section#new article #newContent div {
-    width: 100%;
-    height: 550px;
+    width: 250px;
+    height: 300px;
     border-radius: 10px;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 25%);
     background-size: cover;
   }
   section#new article #newContent div:first-child {
     margin-bottom: 0px;
+  }
+
+  /*ingredient*/
+  section#ingredient article #ingreContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+  section#ingredient article #ingreContent div {
+    height: 280px;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 25%);
+    margin-bottom: 0px;
+  }
+  section#ingredient article #ingreContent p {
+    color: white;
+    text-align: center;
+    line-height: 110px;
+    font-size: 0.8em;
   }
 
   /*footer*/
