@@ -17,20 +17,18 @@ a {
   color: black;
 }
 
-#contents {
-  border: 1px solid black;
-}
-
 /* header */
 header {
   width: 100%;
   position: fixed;
-  padding: 10px 40px;
+  padding: 5px 40px;
 }
-
+header.active {
+  background-color: #a6daf4;
+}
 header nav {
   max-width: 1200px;
-  height: 50px;
+  height: 40px;
   margin: 0 auto;
 }
 #logo {
@@ -43,27 +41,27 @@ header nav {
 header nav .active {
   background-color: #a6daf4;
 }
-header nav #menu a#toggle {
+header nav #menuList a#toggle {
   width: 40px;
-  height: 50px;
-  line-height: 50px;
+  height: 40px;
+  line-height: 40px;
   display: block;
   float: right;
 }
-header nav #menu a#toggle img {
+header nav #menuList a#toggle img {
   width: 100%;
   vertical-align: middle;
 }
 
-header nav #menu ul li {
-  padding: 20px;
+header nav #menuList ul li {
+  padding: 13px;
   text-align: center;
   border-bottom: 1px solid #576979;
-  font-size: 2em;
+  font-size: 1em;
   font-weight: bold;
 }
 
-header nav #menu ul {
+header nav #menuList ul {
   display: none;
   clear: right;
   margin: 0 auto;
@@ -110,7 +108,7 @@ section#banner h2 {
   color: white;
   font-size: 1.2em;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 /*new*/
@@ -176,11 +174,11 @@ section#franchise article #franContent {
   text-align: center;
   gap: 20px;
   margin-bottom: 40px;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 section#franchise article #franContent .franImg {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin-bottom: 10px;
   border-radius: 100%;
   border: 2px solid #a6daf4;
@@ -192,24 +190,22 @@ section#franchise article #franContent .franImg Img {
 section#franchise article #franContent > div:last-child .franImg img {
   width: 100%;
 }
-
 section#franchise article #franText {
   text-align: center;
-  font-size: 1em;
+  font-size: 0.9em;
   line-height: 25px;
   margin-bottom: 40px;
 }
-
 section#franchise article #franButton {
-  width: 230px;
-  height: 60px;
+  width: 160px;
+  height: 40px;
   text-align: center;
-  line-height: 60px;
+  line-height: 40px;
   background-color: #a6daf4;
   border-radius: 70px;
   border: 2px solid #00a6fb;
   margin: 0 auto;
-  font-size: 1.5em;
+  font-size: 1.1em;
 }
 
 /*footer*/
@@ -244,19 +240,19 @@ footer p:last-child {
     justify-content: space-evenly;
     align-items: center;
   }
-  header nav #menu {
+  header nav #menuList {
     width: 550px;
   }
-  header nav #menu a#toggle {
+  header nav #menuList a#toggle {
     display: none !important;
   }
-  header nav #menu ul {
+  header nav #menuList ul {
     display: flex;
     justify-content: space-between;
     background: none;
     font-size: 0.4em;
   }
-  header nav #menu ul li {
+  header nav #menuList ul li {
     border: none;
   }
 
@@ -285,12 +281,12 @@ footer p:last-child {
   /*new*/
   section#new article #newContent {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 90px;
+    gap: 50px;
   }
   section#new article #newContent div {
-    width: 250px;
+    width: 300px;
     height: 300px;
     border-radius: 10px;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 25%);
