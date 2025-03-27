@@ -2,17 +2,36 @@ $(document).ready(function () {
   /*scroll */
   const $header = $("header");
   const $toggle = $("#toggle");
-  const $menuUl = $("#menuList ul");
+  const $menuUl = $("#menuList>ul");
 
   function pcHeader() {
     $(window).scrollTop() > 0
       ? $header.addClass("active")
       : $header.removeClass("active");
 
+    $("header").mouseenter(function () {
+      $header.addClass("active");
+    });
+
+    $("header").mouseleave(function () {
+      $(window).scrollTop() > 0
+        ? $header.addClass("active")
+        : $header.removeClass("active");
+    });
+
     /*sub */
-    $("#menuList  li").hover(function () {
-      e.stopPropagation();
-      $(this).next($(".sub_menu")).slideToggle();
+    $("#menuList>ul>li").mouseenter(function () {
+      if ($(this).children(".sub_menu").length > 0) {
+        $(this).children(".sub_menu").slideDown();
+        $menuUl.addClass("block");
+      }
+    });
+
+    $("#menuList>ul>li").mouseleave(function () {
+      if ($(this).children(".sub_menu").length > 0) {
+        $(this).children(".sub_menu").slideUp();
+        $menuUl.removeClass("block");
+      }
     });
   }
 
@@ -26,9 +45,16 @@ $(document).ready(function () {
     }
 
     /*sub */
-    $("#menuList  li > a").hover(function (e) {
-      e.stopPropagation();
-      $(this).next($(".sub_menu")).slideToggle();
+    $("#menuList>ul>li").mouseenter(function (e) {
+      if ($(this).children(".sub_menu").length > 0) {
+        $(this).children(".sub_menu").slideDown();
+      }
+    });
+
+    $("#menuList>ul>li").mouseleave(function (e) {
+      if ($(this).children(".sub_menu").length > 0) {
+        $(this).children(".sub_menu").slideUp();
+      }
     });
   }
 
@@ -57,11 +83,6 @@ $(document).ready(function () {
 
   // 초기 상태 확인
   activeHeader();
-
-  /*sub menu */
-  $("#menuList  li > a").hover(function () {
-    $(this).next($(".sub_menu")).slideToggle("fast");
-  });
 
   /*swipe */
   var swiper = new Swiper(".mySwiper", {

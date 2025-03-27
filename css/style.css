@@ -51,24 +51,24 @@ header nav #menuList div#toggle img {
   vertical-align: middle;
 }
 
-header nav #menuList ul li {
+header nav #menuList > ul > li {
   padding: 13px;
   text-align: center;
   border-bottom: 1px solid #576979;
   font-size: 1em;
   font-weight: bold;
+  line-height: 30px;
 }
 
-header nav #menuList ul {
+header nav #menuList > ul {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out;
   clear: right;
   margin: 0 auto;
 }
 
-header nav #menuList ul.block {
-  max-height: 500px; /* 충분히 큰 값 */
+header nav #menuList > ul.block {
+  max-height: max-content; /* 충분히 큰 값 */
 }
 
 header nav #menuList .sub_menu li {
@@ -76,6 +76,7 @@ header nav #menuList .sub_menu li {
   background-color: #eee;
   width: 100%;
   font-size: 0.8em;
+  padding: 5px;
 }
 
 header nav #menuList .sub_menu {
@@ -334,33 +335,31 @@ footer p:last-child {
     justify-content: space-evenly;
     align-items: flex-start;
   }
+  header nav #logo {
+    margin-top: 5px;
+  }
   header nav #menuList {
     width: 550px;
   }
   header nav #menuList div#toggle {
     display: none;
   }
-  header nav #menuList ul {
+  header nav #menuList > ul {
     display: block flex !important;
     max-height: 50px;
     justify-content: space-between;
     background: none;
     font-size: 0.4em;
   }
-  header nav #menuList ul li {
+  header nav #menuList > ul > li {
     border: none;
+    width: 120px;
   }
 
   header nav #menuList .sub_menu {
-    display: none; /* 초기에 숨김 */
-    position: absolute;
+    width: max-content; /* 내용에 맞는 너비 */
+    min-width: 100%; /* 최소 부모 li의 너비 */
     background-color: #eee;
-    width: 100%;
-    z-index: 10;
-  }
-
-  header nav #menuList ul > li {
-    position: relative;
   }
 
   /*section*/
