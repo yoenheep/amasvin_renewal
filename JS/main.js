@@ -8,6 +8,12 @@ $(document).ready(function () {
     $(window).scrollTop() > 0
       ? $header.addClass("active")
       : $header.removeClass("active");
+
+    /*sub */
+    $("#menuList  li").hover(function () {
+      e.stopPropagation();
+      $(this).next($(".sub_menu")).slideToggle();
+    });
   }
 
   function mobileHeader() {
@@ -18,6 +24,12 @@ $(document).ready(function () {
         ? $header.addClass("active")
         : $header.removeClass("active");
     }
+
+    /*sub */
+    $("#menuList  li > a").hover(function (e) {
+      e.stopPropagation();
+      $(this).next($(".sub_menu")).slideToggle();
+    });
   }
 
   function activeHeader() {
@@ -45,6 +57,11 @@ $(document).ready(function () {
 
   // 초기 상태 확인
   activeHeader();
+
+  /*sub menu */
+  $("#menuList  li > a").hover(function () {
+    $(this).next($(".sub_menu")).slideToggle("fast");
+  });
 
   /*swipe */
   var swiper = new Swiper(".mySwiper", {
