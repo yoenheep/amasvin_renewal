@@ -58,7 +58,7 @@ $(document).ready(function () {
     },
     spaceBetween: 20,
     autoplay: {
-      delay: 2500,
+      delay: 2300,
     },
   });
 });
