@@ -1,48 +1,50 @@
 $(document).ready(function () {
   /*scroll */
-  var headerHeight = $("header").height();
+  const $header = $("header");
+  const $toggle = $("#toggle");
+  const $menuUl = $("#menuList ul");
 
-  $(window).on("scroll", function () {
-    var windowWidth = $(window).width();
-    var scrollTop = $(window).scrollTop();
+  function pcHeader() {
+    $(window).scrollTop() > 0
+      ? $header.addClass("active")
+      : $header.removeClass("active");
+  }
 
-    // PC 모드일 때
-    if (windowWidth > 875) {
-      if (scrollTop > headerHeight) {
-        $("header").addClass("active");
-      } else {
-        $("header").removeClass("active");
-      }
+  function mobileHeader() {
+    if ($menuUl.hasClass("block")) {
+      $header.addClass("active");
+    } else {
+      $(window).scrollTop() > 0
+        ? $header.addClass("active")
+        : $header.removeClass("active");
     }
-    // 모바일 모드일 때
-    else {
-      // ul이 보여지고 있다면 무조건 active
-      if ($("nav #menuList ul").is(":visible")) {
-        $("header").addClass("active");
-      }
-      // ul이 안 보이면 PC와 같이 헤더 높이에 따라 active 처리
-      else {
-        if (scrollTop > headerHeight) {
-          $("header").addClass("active");
-        } else {
-          $("header").removeClass("active");
-        }
-      }
+  }
+
+  function activeHeader() {
+    if ($(window).width() >= 875) {
+      pcHeader();
+    } else {
+      mobileHeader();
     }
+  }
+
+  // 모바일 메뉴 토글 이벤트 (checkHeaderState 외부)
+  $toggle.on("click", function () {
+    // 메뉴 표시/숨김 토글
+    $menuUl.toggleClass("block");
+    mobileHeader();
   });
 
-  /*toggle */
-  $("#toggle").on("click", function (e) {
-    e.preventDefault();
-    // 모바일일 때
-    if ($(window).width() <= 875) {
-      // 제일 상단에 있을 때
-      if ($(window).scrollTop() === 0) {
-        $("header").addClass("active");
-      }
-    }
-    $("nav #menuList ul").slideToggle();
+  // 스크롤 이벤트 핸들러를 한 번만 연결
+  $(window).on("scroll", activeHeader);
+
+  // 크기 조정 이벤트 핸들러를 한 번만 연결
+  $(window).on("resize", function () {
+    activeHeader();
   });
+
+  // 초기 상태 확인
+  activeHeader();
 
   /*swipe */
   var swiper = new Swiper(".mySwiper", {

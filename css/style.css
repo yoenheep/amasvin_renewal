@@ -40,17 +40,14 @@ header nav {
 #logo img {
   height: 100%;
 }
-header nav .active {
-  background-color: #a6daf4;
-}
-header nav #menuList a#toggle {
+header nav #menuList div#toggle {
   width: 40px;
   height: 40px;
   line-height: 40px;
   display: block;
   float: right;
 }
-header nav #menuList a#toggle img {
+header nav #menuList div#toggle img {
   width: 100%;
   vertical-align: middle;
 }
@@ -64,9 +61,15 @@ header nav #menuList ul li {
 }
 
 header nav #menuList ul {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
   clear: right;
   margin: 0 auto;
+}
+
+header nav #menuList ul.block {
+  max-height: 500px; /* 충분히 큰 값 */
 }
 
 /*section*/
@@ -285,7 +288,7 @@ footer p:last-child {
   header nav #menuList {
     width: 550px;
   }
-  header nav #menuList a#toggle {
+  header nav #menuList div#toggle {
     display: none;
   }
   header nav #menuList ul {
