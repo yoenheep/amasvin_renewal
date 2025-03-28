@@ -125,24 +125,38 @@ section#banner {
 }
 section#banner h2 {
   color: white;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
   margin-bottom: 15px;
 }
 
 /*new*/
-section#new article #newContent div {
-  width: 100%;
-  height: 200px;
+section#new article #newContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 40px;
+  width: 100%; /* 전체 너비 보장 */
+}
+
+section#new article #newContent > a {
+  flex: 1; /* 동일한 너비 분배 */
+  width: 100%; /* 명시적 너비 설정 */
+}
+
+section#new article #newContent > a > div {
+  width: 100%; /* div의 너비를 명시적으로 100%로 설정 */
+  height: 150px;
   border-radius: 10px;
   box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.25);
   background-size: cover;
-  position: relative; /* Add this to create a positioning context */
+  overflow: hidden;
+  position: relative;
 }
 
 section#new article #newContent #newFirst {
   background-image: url(../image/berryNew.jpg);
-  margin-bottom: 40px;
 }
 
 section#new article #newContent #newSecond {
@@ -156,8 +170,8 @@ section#new #newContent .newHover {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 30px;
-  line-height: 23px;
+  padding: 20px;
+  line-height: 18px;
   color: white;
   opacity: 0;
   visibility: hidden;
@@ -218,6 +232,15 @@ section#menu a#menuBtn div {
   border: 2px solid #00a6fb;
   font-size: 0.9em;
   margin: 0 auto;
+  transition: 0.3s all;
+}
+
+section#menu a#menuBtn:hover div {
+  background: linear-gradient(to bottom, transparent 50%, #00a6fb 50%);
+  background-size: 100% 200%;
+  background-position: 0 bottom;
+  border-color: white;
+  color: white;
 }
 
 /*ingredient*/
@@ -284,7 +307,7 @@ section#franchise article #franContent > div:last-child .franImg img {
 }
 section#franchise article #franText {
   text-align: center;
-  font-size: 0.9em;
+  font-size: 0.75em;
   line-height: 25px;
   margin-bottom: 40px;
 }
@@ -298,6 +321,15 @@ section#franchise article a#franBtn div {
   border: 2px solid #00a6fb;
   margin: 0 auto;
   font-size: 0.9em;
+  transition: 0.3s all;
+}
+
+section#franchise a#franBtn div:hover a#franBtn div {
+  background: linear-gradient(to bottom, transparent 50%, #00a6fb 50%);
+  background-size: 100% 200%;
+  background-position: 0 bottom;
+  border-color: #a6daf4;
+  color: white;
 }
 
 /*footer*/
@@ -324,8 +356,8 @@ footer span {
 footer p:last-child {
   padding-bottom: 20px;
 }
-/*PC & Mobile*/
-@media screen and (min-width: 875px) {
+/* PC*/
+@media screen and (min-width: 768px) {
   /*header*/
   header {
     background: none;
@@ -378,28 +410,25 @@ footer p:last-child {
 
   /*banner*/
   section#banner {
-    padding: 95px 120px;
+    padding: 200px 120px;
   }
   section#banner h2 {
-    font-size: 1.3em;
+    font-size: 2em;
   }
 
   /*new*/
   section#new article #newContent {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 50px;
+    flex-direction: row;
   }
-  section#new article #newContent div {
-    width: 300px;
-    height: 300px;
+  section#new article #newContent > a > div {
+    width: 100%;
+    height: 250px;
     border-radius: 10px;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 25%);
     background-size: cover;
   }
-  section#new article #newContent #newFirst {
-    margin-bottom: 0px;
+  section#new #newContent .newHover {
+    line-height: 23px;
   }
 
   /*ingredient*/
@@ -407,27 +436,28 @@ footer p:last-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
   }
   section#ingredient article #ingreContent div {
     height: 280px;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 25%);
     margin-bottom: 0px;
+    padding: 50px 0;
   }
   section#ingredient article #ingreContent p {
     color: white;
     text-align: center;
-    line-height: 110px;
+    line-height: 25px;
     font-size: 0.8em;
   }
 
   /*franchise*/
-  section#franchise article #franContent {
-    flex-wrap: nowrap;
-  }
   section#franchise article #franContent .franImg {
     width: 150px;
     height: 150px;
+  }
+  section#franchise article #franText {
+    font-size: 1em;
   }
 
   /*footer*/
@@ -435,4 +465,6 @@ footer p:last-child {
     display: inline;
     padding-left: 25px;
   }
+}
+@media screen and (min-width: 1720px) {
 }

@@ -95,8 +95,11 @@ $(document).ready(function () {
     slidesPerView: 2,
     breakpoints: {
       // 화면 너비가 768px 이상일 때
-      875: {
+      768: {
         slidesPerView: 3, // PC 모드에서 3개로 변경
+      },
+      1200: {
+        slidesPerView: 4,
       },
     },
     spaceBetween: 20,
