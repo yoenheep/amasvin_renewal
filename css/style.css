@@ -255,10 +255,11 @@ section#ingredient article #ingreContent div {
   background-size: cover;
   background-position: center;
   margin-bottom: 25px;
-}
-section#ingredient article #ingreContent p {
-  color: white;
   text-align: center;
+}
+section#ingredient article #ingreContent span {
+  color: white;
+
   line-height: 110px;
   font-size: 0.8em;
 }
@@ -444,11 +445,15 @@ footer p:last-child {
     margin-bottom: 0px;
     padding: 50px 0;
   }
-  section#ingredient article #ingreContent p {
+  section#ingredient article #ingreContent span {
     color: white;
     text-align: center;
     line-height: 25px;
     font-size: 0.8em;
+  }
+  section#ingredient article #ingreContent a:last-child span {
+    width: 100%;
+    display: block;
   }
 
   /*franchise*/
@@ -466,5 +471,9 @@ footer p:last-child {
     padding-left: 25px;
   }
 }
+
 @media screen and (min-width: 1720px) {
+  section#ingredient article #ingreContent a:last-child span {
+    width: auto;
+  }
 }
