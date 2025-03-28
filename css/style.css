@@ -81,7 +81,7 @@ header nav #menuList .sub_menu li {
 
 header nav #menuList .sub_menu {
   display: none;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 /*section*/
@@ -360,6 +360,7 @@ footer p:last-child {
     width: max-content; /* 내용에 맞는 너비 */
     min-width: 100%; /* 최소 부모 li의 너비 */
     background-color: #eee;
+    transform: dispaly 0.5s ease-in-out;
   }
 
   /*section*/

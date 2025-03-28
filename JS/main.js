@@ -4,32 +4,37 @@ $(document).ready(function () {
   const $toggle = $("#toggle");
   const $menuUl = $("#menuList>ul");
 
+  /*PC */
   function pcHeader() {
     $(window).scrollTop() > 0
       ? $header.addClass("active")
       : $header.removeClass("active");
 
-    $("header").mouseenter(function () {
+    $("header").mouseenter(function (e) {
+      e.preventDefault();
       $header.addClass("active");
     });
 
-    $("header").mouseleave(function () {
+    $("header").mouseleave(function (e) {
+      e.preventDefault();
       $(window).scrollTop() > 0
         ? $header.addClass("active")
         : $header.removeClass("active");
     });
 
     /*sub */
-    $("#menuList>ul>li").mouseenter(function () {
+    $("#menuList>ul>li").mouseenter(function (e) {
+      e.preventDefault();
       if ($(this).children(".sub_menu").length > 0) {
-        $(this).children(".sub_menu").slideDown();
+        $(this).children(".sub_menu").css("display", "block");
         $menuUl.addClass("block");
       }
     });
 
-    $("#menuList>ul>li").mouseleave(function () {
+    $("#menuList>ul>li").mouseleave(function (e) {
+      e.preventDefault();
       if ($(this).children(".sub_menu").length > 0) {
-        $(this).children(".sub_menu").slideUp();
+        $(this).children(".sub_menu").css("display", "none");
         $menuUl.removeClass("block");
       }
     });
@@ -46,12 +51,14 @@ $(document).ready(function () {
 
     /*sub */
     $("#menuList>ul>li").mouseenter(function (e) {
+      e.preventDefault();
       if ($(this).children(".sub_menu").length > 0) {
         $(this).children(".sub_menu").slideDown();
       }
     });
 
     $("#menuList>ul>li").mouseleave(function (e) {
+      e.preventDefault();
       if ($(this).children(".sub_menu").length > 0) {
         $(this).children(".sub_menu").slideUp();
       }
@@ -77,9 +84,7 @@ $(document).ready(function () {
   $(window).on("scroll", activeHeader);
 
   // 크기 조정 이벤트 핸들러를 한 번만 연결
-  $(window).on("resize", function () {
-    activeHeader();
-  });
+  $(window).on("resize", activeHeader);
 
   // 초기 상태 확인
   activeHeader();
