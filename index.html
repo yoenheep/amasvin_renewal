@@ -7,8 +7,257 @@
     <link rel="apple-touch-icon" href="./image/favicon_logo.png" />
     <title>아마스빈_리뉴얼</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
   </head>
   <body>
-    <p>test</p>
+    <header>
+      <nav>
+        <div id="logo">
+          <a href="#"><img src="./image/amasvin_logo.png" /></a>
+        </div>
+        <div id="menuList">
+          <div id="toggle">
+            <img src="./image/toggle.png" />
+          </div>
+          <ul>
+            <li>
+              <a href="https://www.amasvin.com/sub/brand.html">BRAND</a>
+              <ul class="sub_menu">
+                <li>
+                  <a href="https://www.amasvin.com/sub/brand.html">B.I</a>
+                </li>
+                <li>
+                  <a href="https://www.amasvin.com/sub/ingredient.html">재료</a>
+                </li>
+                <li>
+                  <a href="https://www.amasvin.com/sub/character.html"
+                    >캐릭터</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="https://www.amasvin.com/sub/menu.html">MENU</a></li>
+            <li>
+              <a href="https://www.amasvin.com/sub/membership.html">
+                MEMBERSHIP
+              </a>
+            </li>
+            <li>
+              <a href="https://www.amasvin.com/sub/customer.html">문의</a>
+              <ul class="sub_menu">
+                <li>
+                  <a href="https://www.amasvin.com/sub/customer.html"
+                    >고객문의</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.amasvin.com/sub/franchise.html"
+                    >가맹문의</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div id="contents">
+      <section id="banner">
+        <article>
+          <h2>오랫동안 사랑하고 사랑 받고 싶습니다</h2>
+          <h2>AMAS VIN DUM LONGA TEMPO</h2>
+        </article>
+      </section>
+
+      <section id="new">
+        <article>
+          <aside class="title">
+            <img src="./image/bubbry.png" />
+            <h2>NEW</h2>
+          </aside>
+          <aside id="newContent">
+            <a href="https://www.amasvin.com/sub/menu.html">
+              <div id="newFirst">
+                <div class="newHover">
+                  <p>봄 신메뉴</p>
+                  <p>미리 봄 딸기</p>
+                  <p>생딸기와 함께 다양한 토핑 가득!</p>
+                  <hr />
+                  <p>
+                    새로운 봄 시즌 메뉴 6종<br />아마스빈에서 달콤한 봄을
+                    맞이하세요.
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="https://www.amasvin.com/sub/menu.html">
+              <div id="newSecond">
+                <div class="newHover">
+                  <p>NEW 펄 메뉴</p>
+                  <p>미니펄링</p>
+                  <p>홍콩식 사고향을 담은 미니펄</p>
+                  <hr />
+                  <p>
+                    코코넛 향과 고소한 맛, 쫄깃한 식감까지!<br />아마스빈에서
+                    미니펄링 한 잔으로 홍콩 여행 떠나보세요.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </aside>
+        </article>
+      </section>
+
+      <section id="menu">
+        <article>
+          <aside class="title">
+            <img src="./image/white.png" />
+            <h2>MENU</h2>
+          </aside>
+          <aside class="swiper">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="swiper-item">
+                    <img src="./image/menu1.png" />
+                    <p>초코버블티</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-item">
+                    <img src="./image/menu2.png" />
+                    <p>오레오쉐이크</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-item">
+                    <img src="./image/menu3.png" />
+                    <p>흑당버블티</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-item">
+                    <img src="./image/menu4.png" />
+                    <p>얼그레이밀크티</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-item">
+                    <img src="./image/menu5.png" />
+                    <p>아메리카노</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-item">
+                    <img src="./image/menu6.png" />
+                    <p>사하라</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-item">
+                    <img src="./image/menu7.png" />
+                    <p>타로버블티</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <a href="https://www.amasvin.com/sub/menu.html" id="menuBtn">
+            <div>메뉴 더보기 ></div>
+          </a>
+        </article>
+      </section>
+
+      <section id="ingredient">
+        <article>
+          <aside class="title">
+            <img src="./image/co.png" />
+            <h2>GOOD DRINK</h2>
+          </aside>
+          <aside id="ingreContent">
+            <div>
+              <a href="https://www.amasvin.com/sub/ingredient.html#"
+                ><span>하동잎 100%</span></a
+              >
+            </div>
+            <div>
+              <a href="https://www.amasvin.com/sub/ingredient.html#"
+                ><span>목장 생요거트</span></a
+              >
+            </div>
+            <div>
+              <a href="https://www.amasvin.com/sub/ingredient.html#"
+                ><span>과일주스 버블티</span></a
+              >
+            </div>
+            <div>
+              <a href="https://www.amasvin.com/sub/ingredient.html#">
+                <span>도시농가코페</span>
+                <span>로스터리</span>
+              </a>
+            </div>
+          </aside>
+        </article>
+      </section>
+
+      <section id="franchise">
+        <article>
+          <aside class="title">
+            <img src="./image/al.png" />
+            <h2>FRANCHISE</h2>
+          </aside>
+          <aside id="franContent">
+            <div class="franItem">
+              <div class="franImg"><img src="./image/ddungu.png" /></div>
+              <p>다양한 메뉴</p>
+            </div>
+            <div class="franItem">
+              <div class="franImg"><img src="./image/king.png" /></div>
+              <p>맛있는 음료</p>
+            </div>
+            <div class="franItem">
+              <div class="franImg"><img src="./image/gray.png" /></div>
+              <p>저렴한 가격</p>
+            </div>
+            <div class="franItem">
+              <div class="franImg"><img src="./image/duckbae.png" /></div>
+              <p>신선한 재료</p>
+            </div>
+          </aside>
+          <aside id="franText">
+            <h3>
+              10년을 훌쩍 넘긴 버블티 프랜차이즈<br />오랫동안 사랑받을 수
+              있었던 이유를 만나보세요.
+            </h3>
+          </aside>
+          <a href="https://www.amasvin.com/sub/franchise.html" id="franBtn">
+            <div>가맹문의 ></div>
+          </a>
+        </article>
+      </section>
+    </div>
+
+    <footer>
+      <img src="./image/footer_logo.png" />
+      <p>
+        전국 가맹문의:1899-8608
+        <span>서울 & 중부권 지사 대표번호 1899-8603</span>
+        <span>서울 & 중부권 지사 가맹문의 02-866-7043</span>
+      </p>
+      <p>
+        사업자등록번호:605-86-27507
+        <span>(주) 비케이컴퍼니 대표이사 이욱기</span>
+        <span>부산 진구 중앙대로 666번길 17 8층</span>
+      </p>
+      <p>
+        TEL:1899-8608
+        <span>amasvin_sns@naver.com</span>
+      </p>
+      <p>ⓒBKC CO.LTD ALL Rights Reserved</p>
+    </footer>
+    <script src="./JS/main.js"></script>
+    <script src="./JS/swiper-bundle.min.js"></script>
   </body>
 </html>
