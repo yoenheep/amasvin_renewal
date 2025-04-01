@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  /*scroll */
+  /*스크롤 */
   const $header = $("header");
   const $toggle = $("#toggle");
   const $menuUl = $("#menuList>ul");
@@ -22,10 +22,13 @@ $(document).ready(function () {
         : $header.removeClass("active");
     });
 
-    /*sub */
+    /*서브메뉴 */
+    $("#menuList>ul>li").off("mouseenter mouseleave"); // 이전 이벤트 핸들러 제거
+
     $("#menuList>ul>li").mouseenter(function (e) {
       e.preventDefault();
       if ($(this).children(".sub_menu").length > 0) {
+        $("#menuList>ul>li .sub_menu").hide(); // 다른 모든 서브메뉴 먼저 숨기기
         $(this).children(".sub_menu").css("display", "block");
         $menuUl.addClass("block");
       }
@@ -35,7 +38,13 @@ $(document).ready(function () {
       e.preventDefault();
       if ($(this).children(".sub_menu").length > 0) {
         $(this).children(".sub_menu").css("display", "none");
-        $menuUl.removeClass("block");
+        // 서브메뉴가 있는 다른 메뉴 항목 위에 호버 중이 아닐 때만 block 클래스 제거
+        if (
+          !$("#menuList>ul>li:hover").length ||
+          !$("#menuList>ul>li:hover").children(".sub_menu").length
+        ) {
+          $menuUl.removeClass("block");
+        }
       }
     });
   }
@@ -49,23 +58,29 @@ $(document).ready(function () {
         : $header.removeClass("active");
     }
 
-    /*sub */
+    /*서브메뉴 */
+    $("#menuList>ul>li").off("mouseenter mouseleave"); // 이전 이벤트 핸들러 제거
+
     $("#menuList>ul>li").mouseenter(function (e) {
       e.preventDefault();
       if ($(this).children(".sub_menu").length > 0) {
-        $(this).children(".sub_menu").slideDown();
+        $(this).children(".sub_menu").stop().slideDown();
       }
     });
 
     $("#menuList>ul>li").mouseleave(function (e) {
       e.preventDefault();
       if ($(this).children(".sub_menu").length > 0) {
-        $(this).children(".sub_menu").slideUp();
+        $(this).children(".sub_menu").stop().slideUp();
       }
     });
   }
 
   function activeHeader() {
+    // 이벤트 핸들러 중복을 방지하기 위해 먼저 모든 이벤트 핸들러 제거
+    $("header").off("mouseenter mouseleave");
+    $("#menuList>ul>li").off("mouseenter mouseleave");
+
     if ($(window).width() >= 875) {
       pcHeader();
     } else {
@@ -73,7 +88,7 @@ $(document).ready(function () {
     }
   }
 
-  // 모바일 메뉴 토글 이벤트 (checkHeaderState 외부)
+  // 모바일 메뉴 토글 이벤트
   $toggle.on("click", function () {
     // 메뉴 표시/숨김 토글
     $menuUl.toggleClass("block");
@@ -89,7 +104,7 @@ $(document).ready(function () {
   // 초기 상태 확인
   activeHeader();
 
-  /*swipe */
+  /*스와이프 */
   var swiper = new Swiper(".mySwiper", {
     loop: true,
     slidesPerView: 2,

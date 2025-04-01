@@ -55,7 +55,7 @@ header nav #menuList > ul > li {
   padding: 13px;
   text-align: center;
   border-bottom: 1px solid #576979;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: bold;
   line-height: 30px;
 }
@@ -235,7 +235,7 @@ section#menu a#menuBtn div {
   transition: 0.3s all;
 }
 
-section#menu a#menuBtn:hover div {
+section#menu a#menuBtn div:hover {
   background: linear-gradient(to bottom, transparent 50%, #00a6fb 50%);
   background-size: 100% 200%;
   background-position: 0 bottom;
@@ -275,6 +275,11 @@ section#ingredient article #ingreContent div:nth-child(3) {
 section#ingredient article #ingreContent div:last-child {
   background-image: url(../image/coffee.jpg);
   margin-bottom: 0;
+}
+section#ingredient article #ingreContent div:last-child a {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
 
 /*franchise*/
@@ -325,7 +330,7 @@ section#franchise article a#franBtn div {
   transition: 0.3s all;
 }
 
-section#franchise a#franBtn div:hover a#franBtn div {
+section#franchise a#franBtn div:hover {
   background: linear-gradient(to bottom, transparent 50%, #00a6fb 50%);
   background-size: 100% 200%;
   background-position: 0 bottom;
@@ -451,9 +456,8 @@ footer p:last-child {
     line-height: 25px;
     font-size: 0.8em;
   }
-  section#ingredient article #ingreContent a:last-child span {
-    width: 100%;
-    display: block;
+  section#ingredient article #ingreContent div:last-child a {
+    flex-direction: column;
   }
 
   /*franchise*/
@@ -475,5 +479,8 @@ footer p:last-child {
 @media screen and (min-width: 1720px) {
   section#ingredient article #ingreContent a:last-child span {
     width: auto;
+  }
+  section#ingredient article #ingreContent div:last-child a {
+    flex-direction: row;
   }
 }
